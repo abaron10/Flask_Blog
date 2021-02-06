@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from forms import RegistrationForm, LoginForm
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'AndresFernando'
+app.config['SECRET_KEY'] = '24f20819886590fe91aa5faedc60d1b4'
 
 posts =[
     {
@@ -28,7 +28,7 @@ def home():
 def about():
     return render_template("about.html", title="About")
 
-@app.route("/register")
+@app.route("/register", methods=['GET','POST'])
 def register():
     form = RegistrationForm()
     return render_template("register.html", title="Register", form=form)
